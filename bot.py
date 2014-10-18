@@ -3,7 +3,7 @@ import time
 
 import tweepy
 
-class TwitterAPI:
+class TwitterAPI(object):
     """
     Class for accessing the Twitter API.
 
@@ -26,7 +26,7 @@ class TwitterAPI:
 
 if __name__ == "__main__":
     twitter = TwitterAPI()
-    twitter.tweet("Hello world!") #You probably want to remove this line
+    twitter.tweet("This is a test tweet!") #You probably want to remove this line
     while True:
         #Send a tweet here!
         time.sleep(60)
