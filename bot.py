@@ -54,6 +54,6 @@ if __name__ == "__main__":
         responses = responses['data']
         responses = filter(lambda x:x['polarity']==0, responses)
         for response in responses:
-            twitter.tweet(response['user']+": "+response['text'])
-            twitter.tweet(response['user']+" I'm sorry you didn't enjoy "+competitor+". Have you considered switching to "+company+"?")
+            # twitter.tweet(response['user']+": "+response['text'])
+            # twitter.tweet(response['user']+" I'm sorry you didn't enjoy "+competitor+". Have you considered switching to "+company+"?")
         time.sleep(60) #1 minute
