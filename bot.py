@@ -24,6 +24,8 @@ class TwitterAPI(object):
 
     def tweet(self, message):
         """Send a tweet"""
+        if len(message) > 140:
+            message = message[:140]
         self.api.update_status(message)
 
 if __name__ == "__main__":
