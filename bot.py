@@ -27,6 +27,7 @@ class TwitterAPI(object):
         if len(message) > 140:
             message = message[:140]
         self.api.update_status(message)
+        # print message
 
 if __name__ == "__main__":
     twitter = TwitterAPI()
@@ -47,7 +48,7 @@ if __name__ == "__main__":
             sentimentQuery = {}
             sentimentQuery['text'] = text
             sentimentQuery['query'] = competitor
-            sentimentQuery['user'] = tweet.user.name
+            sentimentQuery['user'] = tweet.user.screen_name
             if not tweet.user.name.lower() == competitor.lower():
                 sentimentQueries.append(sentimentQuery)
         sentimentQueries = {'data':sentimentQueries}
@@ -61,6 +62,7 @@ if __name__ == "__main__":
             try:
                 twitter.tweet(response['user']+": "+response['text'])
                 twitter.tweet(response['user']+" I'm sorry you didn't enjoy "+competitor+". Have you considered switching to "+company+"?")
+
                 break
             except tweepy.error.TweepError:
                 print "whoops"
